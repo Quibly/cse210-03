@@ -14,23 +14,22 @@ class answer:
     def move_word(self, word):
         self._word = word
 
-    def answer_display(self, word, new_letter):
+    def get_word_count(self, word):
+        word_count = "_ " * len(word)
+        print(word_count)
+        print(word)
+
+    def answer_display(self, word):
         guessed = False
         while not guessed:
-            word_count = "_ " * len(word)
-            print(word_count)
-            print(word)
-            guess = input("Please guess a letter or word: ")
             word_as_list = list(word_count)
-            indices = [i for i, letter in enumerate(word) if letter == guess]
+            indices = [i for i, letter in enumerate(word) if letter == guesser]
             for index in indices:
-                word_as_list[index] = guess
+                word_as_list[index] = guesser
                 word_count = "".join(word_as_list)
                 if "_" not in word_count:
                     guessed = True
-    
-
-        print(word_count)
+            print(word_count)
         
 
         
