@@ -19,7 +19,7 @@ class answer:
         print(word_count)
         print(word)
 
-    def answer_display(self, word):
+    def answer_display(self, word, guesser):
         guessed = False
         while not guessed:
             word_as_list = list(word_count)
@@ -27,8 +27,8 @@ class answer:
             for index in indices:
                 word_as_list[index] = guesser
                 word_count = "".join(word_as_list)
-                if "_" not in word_count:
-                    guessed = True
+            if "_" not in word_count:
+                guessed = True
             print(word_count)
         
 
