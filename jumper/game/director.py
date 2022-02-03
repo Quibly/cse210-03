@@ -18,7 +18,6 @@ class director:
         Args:
         """
         self._answer = answer()
-        self._current_guess = ''
         self._guesser = guesser()
         self._parachute = parachute()
 
@@ -41,16 +40,17 @@ class director:
     def _get_parachute(self):
         """
         """
-        if self._parachute._parachute_exists:
-            self._parachute._display_parachute
-
-
-
-
+        if self._parachute._parachute_exists():
+            if self._guesser._letter_in_word():
+                self._parachute._display_parachute()
+            else:
+                self._parachute._break_parachute()
+                self._parachute._display_parachute()
+        
     def _get_guesser(self):
         """
         """
-        pass
+        self._guesser._get_letter()
     
 
     def _end_game(self):

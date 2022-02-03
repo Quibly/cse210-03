@@ -14,7 +14,6 @@ class parachute:
         """
         self._parachute = []
         self._parachute_exists = True
-        self._parachute_counter = int(7)
 
 
     def _create_parachute(self):
@@ -30,6 +29,11 @@ class parachute:
             print(f' {self._parachute[i]}')
 
         print('\n^^^^^^^\n')
+
+    def _break_parachute(self):
+        """
+        """
+        self._parachute.pop()
 
     def _parachute_exists(self):
         """
