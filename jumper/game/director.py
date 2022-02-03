@@ -42,11 +42,12 @@ class director:
         """
         """
         if self._parachute._parachute_exists:
-            self._parachute._display_parachute
-
-
-
-
+            if self._guesser._letter_exists:
+                self._parachute._display_parachute
+            else:
+                self._parachute._break_parachute
+                self._parachute._display_parachute
+        
     def _get_guesser(self):
         """
         """
