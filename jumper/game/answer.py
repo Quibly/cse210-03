@@ -31,6 +31,22 @@ class answer:
             if "_" not in word_count:
                 guessed = True
             print(word_count)
-        
+
+    
+
+    def _get_answer_list(self):
+        self._answer_list.clear()
+        for i in len(self.word):
+            self.answer_list.append('_')
+
+    def _get_word_list(self):
+        self.word_list = self._word.split('')
+
+    def display_word_answer(self):
+        for i in self.word_list:
+            for j in self._guessed_letters:
+                if i == j:
+                    self.answer_list[i] = j
+
 
         
