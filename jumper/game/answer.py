@@ -13,9 +13,9 @@ class answer:
     def move_word(self, word):
         self._word = word
 
-    def answer_display(self, word):
-        word_count = len(word)
-        for i in range(word_count):
-            print("_ ", sep=' ', end='', flush=True)
+    def answer_display(self, word, new_letter):
+        word_count = "_" * len(word)
+        print(word_count)
+        
 
         
