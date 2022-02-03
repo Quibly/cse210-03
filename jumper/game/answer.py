@@ -16,6 +16,6 @@ class answer:
     def answer_display(self, word):
         word_count = len(word)
         for i in range(word_count):
-            print("_")
+            print("_ ", sep=' ', end='', flush=True)
 
         
