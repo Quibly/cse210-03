@@ -14,7 +14,6 @@ class guesser:
         """
         self._guess = ''
         self._answer = answer()
-        self._word = ''
 
     def _get_letter(self):
         """
