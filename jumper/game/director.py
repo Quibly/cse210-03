@@ -46,6 +46,7 @@ class director:
         This method displays the current solution status of the game.
         """
         if self._parachute._parachute_exists():
+            self._answer._current_list_of_guesses()
             self._answer._display_answer_list()
 
     def _get_parachute(self):

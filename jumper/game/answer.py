@@ -80,3 +80,10 @@ class answer:
         else:
             return False
 
+    def _current_list_of_guesses(self):
+        """
+        This method displays a list of the current guesses.
+        """
+        print(f'\nGuessed letters: ')
+        print(*self._guessed_letters)
+        print()
