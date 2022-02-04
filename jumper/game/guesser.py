@@ -1,4 +1,4 @@
-from game.answer import answer
+
 
 class guesser:
 
@@ -13,21 +13,20 @@ class guesser:
         """
         """
         self._guess = ''
-        self._answer = answer()
         self._word_list = []
 
     def _get_letter(self):
         """
         """
-        self.guess = input("\nPlease guess a letter [a-z]: ")
+        self._guess = input("\nPlease guess a letter [a-z]: ")
 
     def _letter_is(self):
         """
         """
-        return self.guess
+        return self._guess
 
-    def _letter_in_word(self):
+    def _letter_in_word(self, word):
         """
         """
-        self._word_list = self._answer._get_word().split('')
-        return (self.guess in self._word_list)
+        self._word_list = word.split()
+        return (self._guess in self._word_list)

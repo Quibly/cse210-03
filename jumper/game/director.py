@@ -43,7 +43,8 @@ class director:
         """
         """
         if self._parachute._parachute_exists():
-            if self._guesser._letter_in_word():
+            word = self._answer._get_word()
+            if self._guesser._letter_in_word(word):
                 self._parachute._display_parachute()
             else:
                 self._parachute._break_parachute()
@@ -52,8 +53,8 @@ class director:
     def _get_guesser(self):
         """
         """
-        self._guesser._get_letter()
-        self._answer._append_guessed_letters_list()
+        letter = self._guesser._get_letter()
+        self._answer._append_guessed_letters_list(letter)
         self._answer._update_answer_list()
     
 

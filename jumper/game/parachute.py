@@ -1,4 +1,4 @@
-from game.director import director
+
 
 class parachute:
     """This class handles the display and parachute condition tracking.
@@ -13,7 +13,6 @@ class parachute:
         Args:
         """
         self._parachute = []
-        self._parachute_exists = True
 
 
     def _create_parachute(self):
@@ -25,7 +24,7 @@ class parachute:
     def _display_parachute(self):
         """
         """
-        for i in range(len(self._parachute), 0, -1):
+        for i in range(len(self._parachute)-1, 0, -1):
             print(f' {self._parachute[i]}')
 
         print('\n^^^^^^^\n')
@@ -38,4 +37,5 @@ class parachute:
     def _parachute_exists(self):
         """
         """
-        return not(self._parachute)
+
+        return (self._parachute[0] != '')
