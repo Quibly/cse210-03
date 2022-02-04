@@ -26,6 +26,8 @@ class director:
         """Method for structuring the order of events of game play
         """
         self._parachute._create_parachute()
+        self._answer._create_answer_list()
+        self._answer._get_word_list()
         while self._parachute._parachute_exists:
             self._get_answer()
             self._get_parachute()
@@ -35,7 +37,7 @@ class director:
     def _get_answer(self):
         """
         """
-        pass
+        self._answer._display_answer_list()
 
     def _get_parachute(self):
         """
@@ -51,6 +53,8 @@ class director:
         """
         """
         self._guesser._get_letter()
+        self._answer._append_guessed_letters_list()
+        self._answer._update_answer_list()
     
 
     def _end_game(self):

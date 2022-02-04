@@ -11,7 +11,7 @@ class answer:
         self.word_list = []
         self._guessed_letters = []
 
-    def get_word(self):
+    def _get_word(self):
         return self._word    
 
     def _create_answer_list(self):
@@ -22,13 +22,13 @@ class answer:
     def _append_guessed_letters_list(self):
         self._guessed_letters.append(self._guesser._letter_is)
 
-    def _dispaly_answer_list(self):
+    def _display_answer_list(self):
         print(*self.answer_list)
             
     def _get_word_list(self):
         self.word_list = self._word.split('')
 
-    def update_word_answer(self):
+    def _update_answer_list(self):
         for i in self.word_list:
             for j in self._guessed_letters:
                 if i == j:
