@@ -14,6 +14,7 @@ class guesser:
         """
         self._guess = ''
         self._answer = answer()
+        self._word_list = []
 
     def _get_letter(self):
         """
@@ -28,5 +29,5 @@ class guesser:
     def _letter_in_word(self):
         """
         """
-        self._answer._get_word()
-        return (self.guess in self._answer.get_word.split(''))
+        self._word_list = self._answer._get_word().split('')
+        return (self.guess in self._word_list)
