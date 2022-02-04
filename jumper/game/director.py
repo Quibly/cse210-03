@@ -20,6 +20,7 @@ class director:
         self._answer = answer()
         self._guesser = guesser()
         self._parachute = parachute()
+        self._gameover = False
 
 
     def start_game(self):
@@ -28,7 +29,7 @@ class director:
         self._parachute._create_parachute()
         self._answer._create_answer_list()
         self._answer._get_word_list()
-        while self._parachute._parachute_exists:
+        while self._parachute._parachute_exists and self._gameover == False:
             self._get_answer()
             self._get_parachute()
             self._get_guesser()
@@ -37,7 +38,8 @@ class director:
     def _get_answer(self):
         """
         """
-        self._answer._display_answer_list()
+        if self._parachute._parachute_exists():
+            self._answer._display_answer_list()
 
     def _get_parachute(self):
         """
@@ -53,9 +55,11 @@ class director:
     def _get_guesser(self):
         """
         """
-        letter = self._guesser._get_letter()
-        self._answer._append_guessed_letters_list(letter)
-        self._answer._update_answer_list()
+        if self._parachute._parachute_exists():
+            self._guesser._get_letter()
+            letter = self._guesser._letter_is()
+            self._answer._append_guessed_letters_list(letter)
+            self._answer._update_answer_list()
     
 
     def _end_game(self):
@@ -63,4 +67,9 @@ class director:
         """
         if not(self._parachute._parachute_exists()):
             print(f'\nYour parachute is gone. Your game is over.')
+            self._gameover=True
+        if self._answer._check_for_win():
+            print('You Won!')
+            self._gameover=True
+
 

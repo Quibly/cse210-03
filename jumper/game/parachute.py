@@ -18,13 +18,13 @@ class parachute:
     def _create_parachute(self):
         """
         """
-        self._parachute = [' / \\ ', ' /|\\ ', '  O  ', ' \\ / ', '\\   /', '/___\\', ' ___ ']
+        self._parachute = [' / \\ ', ' /|\\ ', '  O  ', ' \\ / ', '\\   /', '/___\\', ' ___ ', 'garbage']
 
     
     def _display_parachute(self):
         """
         """
-        for i in range(len(self._parachute)-1, 0, -1):
+        for i in range(len(self._parachute)-1, -1, -1):
             print(f' {self._parachute[i]}')
 
         print('\n^^^^^^^\n')
@@ -38,4 +38,4 @@ class parachute:
         """
         """
 
-        return (self._parachute[0] != '')
+        return (len(self._parachute) != 0)

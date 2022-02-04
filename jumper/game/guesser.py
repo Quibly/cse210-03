@@ -28,5 +28,5 @@ class guesser:
     def _letter_in_word(self, word):
         """
         """
-        self._word_list = word.split()
+        self._word_list = list(word)
         return (self._guess in self._word_list)
